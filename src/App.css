@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.form-section {
+  width: 30%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(226, 78, 78, 0.1);
+}
+
+.receipt-section {
+  width: 70%;
+  background: rgb(29, 4, 80);
+  padding: 25px;
+  border-radius: 10px;
+  border: 2px solid #2563eb;
+}
+
+.form-section input,
+.form-section select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.form-section button {
+  width: 100%;
+  padding: 10px;
+}
