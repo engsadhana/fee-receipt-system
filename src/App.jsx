@@ -30,13 +30,14 @@ function App() {
       {/* Left Side Form */}
       <div className="form-section">
         <h2>Student Details</h2>
-
+        <label>student name</label>
         <input
           type="text"
           placeholder="Student Name"
           value={studentName}
           onChange={(e) => setStudentName(e.target.value)}
         />
+        <label>course name</label>
 
         <input
           type="text"
@@ -44,6 +45,7 @@ function App() {
           value={courseName}
           onChange={(e) => setCourseName(e.target.value)}
         />
+        <label>Pending Amount</label>
 
         <input
           type="number"
@@ -51,12 +53,14 @@ function App() {
           value={pendingAmount}
           onChange={(e) => setPendingAmount(e.target.value)}
         />
+        <label>Amount</label>
         <input
           type="number"
           placeholder="Amount"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
         />
+        <label>date</label>
         <input
           type="date"
           value={date}
@@ -75,7 +79,7 @@ function App() {
           <option>Bank</option>
         </select>
 
-        <button onClick={generatePDF}>Download PDF</button>
+        <button onClick={generatePDF}>GENERATE PDF</button>
       </div>
 
       {/* Right Side Receipt */}
@@ -86,7 +90,6 @@ function App() {
 
         <hr />
 
-        
         <p>
           <strong>Date:</strong> {date}
         </p>
