@@ -10,6 +10,7 @@ function App() {
   const [amount, setAmount] = useState("");
   const [pendingAmount, setPendingAmount] = useState("");
   const [paymentMode, setPaymentMode] = useState("Cash");
+  const [transactionId, setTransactionId] = useState("");
   const [date, setDate] = useState("");
 
   const generatePDF = () => {
@@ -77,7 +78,7 @@ function App() {
 
         <br />
         <br />
-
+        <label>payment</label>
         <select
           value={paymentMode}
           onChange={(e) => setPaymentMode(e.target.value)}
@@ -86,6 +87,18 @@ function App() {
           <option>UPI</option>
           <option>Bank</option>
         </select>
+        {paymentMode === "UPI" && (
+  <>
+    <label>Transaction ID</label>
+
+    <input
+      type="text"
+      placeholder="Enter Transaction ID"
+      value={transactionId}
+      onChange={(e) => setTransactionId(e.target.value)}
+    />
+  </>
+)}
 
         <button onClick={generatePDF}>GENERATE PDF</button>
       </div>
@@ -96,7 +109,6 @@ function App() {
           <img src={logo} alt="Logo" className="logo" />
         </div>
 
-        
         <h3>Fee Receipt</h3>
 
         <hr />
@@ -126,6 +138,11 @@ function App() {
         <p>
           <strong>Payment Mode:</strong> {paymentMode}
         </p>
+        {paymentMode === "UPI" && (
+  <p>
+    <strong>Transaction ID:</strong> {transactionId}
+  </p>
+)}
 
         <br />
 
